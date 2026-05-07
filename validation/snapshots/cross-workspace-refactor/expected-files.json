@@ -1,0 +1,5 @@
+[
+  "frontend/src/App.tsx",
+  "backend/src/index.ts",
+  "shared/src/index.ts"
+]
