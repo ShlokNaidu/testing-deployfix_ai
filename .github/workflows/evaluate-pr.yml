@@ -34,4 +34,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
-      run: npx tsx validation/evaluate-pr.ts
+      run: |
+        npm install @octokit/rest tsx
+        npx tsx validation/evaluate-pr.ts
