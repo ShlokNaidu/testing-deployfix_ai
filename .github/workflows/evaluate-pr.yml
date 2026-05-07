@@ -24,9 +24,6 @@ jobs:
         node-version: '20.x'
         cache: 'npm'
 
-    - name: Clean package-lock cache if out of sync
-      run: npm i --package-lock-only
-
     - name: Install dependencies
       run: npm ci
 
@@ -34,6 +31,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
-      run: |
-        npm install @octokit/rest tsx
-        npx tsx validation/evaluate-pr.ts
+      run: npx tsx validation/evaluate-pr.ts
