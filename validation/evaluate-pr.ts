@@ -52,6 +52,10 @@ async function run() {
   };
 
   prFiles.data.forEach(file => {
+    // Ignore lockfiles from safety calculations
+    const isLockfile = ["package-lock.json", "yarn.lock", "pnpm-lock.yaml"].some(lock => file.filename.endsWith(lock));
+    if (isLockfile) return;
+
     metrics.additions += file.additions;
     metrics.deletions += file.deletions;
 
