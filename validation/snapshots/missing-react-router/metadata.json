@@ -1,0 +1,6 @@
+{
+  "id": "missing-react-router",
+  "category": "dependency",
+  "difficulty": "easy",
+  "expectedFiles": ["frontend/package.json"]
+}
