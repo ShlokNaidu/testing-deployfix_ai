@@ -7,7 +7,7 @@ on:
 jobs:
   evaluate-pr:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'deployfix-app[bot]' # Replace with actual app name
+    if: github.event.pull_request.user.login == 'deployfix-ai[bot]' # Updated bot name
     permissions:
       contents: read
       pull-requests: read
