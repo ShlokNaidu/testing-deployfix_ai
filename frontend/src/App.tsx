@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { HealthResponse } from 'shared'
+import type { HealthResponse } from 'shared'
 
 function App() {
   const [health, setHealth] = useState<HealthResponse | null>(null)
