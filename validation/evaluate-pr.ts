@@ -52,6 +52,10 @@ async function run() {
   };
 
   prFiles.data.forEach(file => {
+    // Ignore lockfiles from safety calculations
+    const isLockfile = ["package-lock.json", "yarn.lock", "pnpm-lock.yaml"].some(lock => file.filename.endsWith(lock));
+    if (isLockfile) return;
+
     metrics.additions += file.additions;
     metrics.deletions += file.deletions;
 
@@ -87,8 +91,11 @@ async function run() {
     console.log("Running npm install inside AI context...");
     execSync("npm install", { stdio: "inherit" }); // ensure any AI package.json additions are installed
 
-    console.log("Running build...");
-    execSync("npm run build", { stdio: "inherit" }); // build shared packages first!
+    console.log("Building shared package first...");
+    execSync("npm run build -w shared", { stdio: "inherit" }); // EXPLICITLY build shared first
+
+    console.log("Running build for other packages...");
+    execSync("npm run build", { stdio: "inherit" }); // build the rest
 
     console.log("Running typecheck...");
     execSync("npm run typecheck", { stdio: "inherit" });
