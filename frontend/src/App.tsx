@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import type { HealthResponse } from 'shared'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   const [health, setHealth] = useState<HealthResponse | null>(null)
@@ -13,20 +14,26 @@ function App() {
   }, [])
 
   return (
-    <>
-      <h1>Frontend</h1>
-      <div>
-        <h2>Backend Status:</h2>
-        {health ? (
-          <div>
-            <p>Status: {health.status}</p>
-            <p>Time: {health.timestamp}</p>
-          </div>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <h1>Frontend</h1>
+            <div>
+              <h2>Backend Status:</h2>
+              {health ? (
+                <div>
+                  <p>Status: {health.status}</p>
+                  <p>Time: {health.timestamp}</p>
+                </div>
+              ) : (
+                <p>Loading...</p>
+              )}
+            </div>
+          </>
+        } />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
