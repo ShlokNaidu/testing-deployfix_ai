@@ -84,12 +84,17 @@ async function run() {
   // 3. Local CI Validations 
   let ciPasses = true;
   try {
+    console.log("Running npm install inside AI context...");
+    execSync("npm install", { stdio: "inherit" }); // ensure any AI package.json additions are installed
+
+    console.log("Running build...");
+    execSync("npm run build", { stdio: "inherit" }); // build shared packages first!
+
     console.log("Running typecheck...");
     execSync("npm run typecheck", { stdio: "inherit" });
+
     console.log("Running lint...");
     execSync("npm run lint", { stdio: "inherit" });
-    console.log("Running build...");
-    execSync("npm run build", { stdio: "inherit" });
   } catch (error) {
     console.error("CI Validation Failed!", error);
     ciPasses = false;
