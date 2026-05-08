@@ -1,0 +1,3 @@
+src/App.tsx(4,10): error TS2305: Module '"shared"' has no exported member 'resolveWorkspaceLabel'.
+
+The correct symbol lives in shared/src/workspace/ownership.ts, while a same-named helper also exists in backend/src/workspace/ownership.ts.

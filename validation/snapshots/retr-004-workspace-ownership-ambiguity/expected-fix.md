@@ -1,0 +1,1 @@
+Add a root re-export for `resolveWorkspaceLabel` from the shared workspace ownership helper in `shared/src/workspace/ownership.ts`. The backend copy is a distractor and should not be used for the fix.

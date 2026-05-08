@@ -1,0 +1,9 @@
+{
+  "id": "retr-004",
+  "category": "retrieval",
+  "title": "Workspace Ownership Ambiguity",
+  "failureBranch": "failure/retr-004-workspace-ownership-ambiguity",
+  "description": "Frontend imports resolveWorkspaceLabel from shared, but the helper exists in both shared/src/workspace/ownership.ts and backend/src/workspace/ownership.ts; the package root does not export the shared one.",
+  "deterministic": true,
+  "expectedModifiedFiles": ["shared/src/index.ts"]
+}
