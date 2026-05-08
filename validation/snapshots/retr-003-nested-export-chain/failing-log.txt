@@ -1,0 +1,3 @@
+src/App.tsx(4,10): error TS2724: '"shared"' has no exported member named 'buildReportLabel'.
+
+The implementation exists in shared/src/features/reporting/format.ts through nested re-exports, but the root index does not expose it.

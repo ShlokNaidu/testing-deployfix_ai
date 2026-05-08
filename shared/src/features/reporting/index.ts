@@ -1,0 +1,1 @@
+export { buildReportLabel } from './format';

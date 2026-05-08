@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import type { HealthResponse } from 'shared'
+import { buildReportLabel } from 'shared'
 
 function App() {
   const [health, setHealth] = useState<HealthResponse | null>(null)
@@ -21,6 +22,7 @@ function App() {
           <div>
             <p>Status: {health.status}</p>
             <p>Time: {health.lastUpdated}</p>
+            <p>Label: {buildReportLabel(health.status, health.lastUpdated)}</p>
           </div>
         ) : (
           <p>Loading...</p>

@@ -1,0 +1,9 @@
+{
+  "id": "retr-003",
+  "category": "retrieval",
+  "title": "Nested Export Chain",
+  "failureBranch": "failure/retr-003-nested-export-chain",
+  "description": "Frontend imports buildReportLabel from shared, but the symbol is only reachable through nested feature exports and is not exposed at the package root.",
+  "deterministic": true,
+  "expectedModifiedFiles": ["shared/src/index.ts"]
+}

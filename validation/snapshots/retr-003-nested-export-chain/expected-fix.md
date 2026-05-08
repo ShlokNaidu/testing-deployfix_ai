@@ -1,0 +1,1 @@
+Add a root re-export for `buildReportLabel` from the nested shared feature chain so the frontend can import it from `shared` without tracing the nested files manually.
