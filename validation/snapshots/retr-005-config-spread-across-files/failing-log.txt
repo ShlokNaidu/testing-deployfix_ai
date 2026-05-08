@@ -1,0 +1,4 @@
+src/App.tsx(4,10): error TS2305: Module '"shared"' has no exported member 'resolveApiBaseUrl'.
+src/App.tsx(4,29): error TS2305: Module '"shared"' has no exported member 'resolveFeatureFlags'.
+
+The config helpers live in shared/src/config/base.ts and shared/src/config/flags.ts, but the root index does not expose them.

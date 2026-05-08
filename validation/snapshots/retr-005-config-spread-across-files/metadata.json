@@ -1,0 +1,9 @@
+{
+  "id": "retr-005",
+  "category": "retrieval",
+  "title": "Shared Config Spread Across Files",
+  "failureBranch": "failure/retr-005-config-spread-across-files",
+  "description": "Frontend imports resolveApiBaseUrl and resolveFeatureFlags from shared, but the helpers are split across shared/src/config/base.ts and shared/src/config/flags.ts and are not exported from the package root.",
+  "deterministic": true,
+  "expectedModifiedFiles": ["shared/src/index.ts"]
+}

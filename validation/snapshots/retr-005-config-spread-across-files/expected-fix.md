@@ -1,0 +1,1 @@
+Add root re-exports for `resolveApiBaseUrl` and `resolveFeatureFlags` from the shared config chain so the frontend can consume the spread configuration surface from `shared` directly.

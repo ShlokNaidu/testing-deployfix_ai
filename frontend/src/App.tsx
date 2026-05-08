@@ -1,12 +1,18 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import type { HealthResponse } from 'shared'
+import { resolveApiBaseUrl, resolveFeatureFlags } from 'shared'
 
 function App() {
   const [health, setHealth] = useState<HealthResponse | null>(null)
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/health')
+    const apiBaseUrl = resolveApiBaseUrl(import.meta.env.MODE)
+    const featureFlags = resolveFeatureFlags(import.meta.env.MODE)
+
+    console.log('Enabled flags:', featureFlags)
+
+    fetch(`${apiBaseUrl}/api/health`)
       .then(res => res.json())
       .then(data => setHealth(data))
       .catch(console.error)
