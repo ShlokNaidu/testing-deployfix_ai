@@ -1,0 +1,9 @@
+{
+  "id": "retr-001",
+  "category": "retrieval",
+  "title": "Symbol Defined Far Away",
+  "failureBranch": "failure/retr-001-symbol-defined-far-away",
+  "description": "Frontend imports formatDisplayTimestamp from shared, but the helper exists only in shared/src/utils/time.ts and is not exported from shared/src/index.ts.",
+  "deterministic": true,
+  "expectedModifiedFiles": ["shared/src/index.ts"]
+}

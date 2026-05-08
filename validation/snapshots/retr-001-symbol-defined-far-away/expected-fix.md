@@ -1,0 +1,1 @@
+Add a root re-export for `formatDisplayTimestamp` from `shared/src/utils/time.ts` in `shared/src/index.ts` so the frontend can import it from `shared` without changing workspace ownership.

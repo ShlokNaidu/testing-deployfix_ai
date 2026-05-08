@@ -1,0 +1,3 @@
+src/App.tsx(4,10): error TS2724: '"shared"' has no exported member named 'formatDisplayTimestamp'. Did you mean 'formatTimestamp'?
+
+This is deterministic: the symbol exists in shared/src/utils/time.ts but is not re-exported from shared/src/index.ts.
