@@ -20,7 +20,7 @@ function App() {
         {health ? (
           <div>
             <p>Status: {health.status}</p>
-            <p>Time: {health.timestamp}</p>
+            <p>Time: {health.lastUpdated}</p>
           </div>
         ) : (
           <p>Loading...</p>

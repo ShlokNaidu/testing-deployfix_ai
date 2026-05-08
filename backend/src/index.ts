@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (req: Request, res: Response) => {
-  const response: HealthResponse = { status: 'ok', timestamp: new Date().toISOString() };
+  const response: HealthResponse = { status: 'ok', lastUpdated: new Date().toISOString() };
   res.json(response);
 });
 
