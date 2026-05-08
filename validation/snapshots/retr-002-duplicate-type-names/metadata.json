@@ -1,0 +1,9 @@
+{
+  "id": "retr-002",
+  "category": "retrieval",
+  "title": "Duplicate Type Names Across Packages",
+  "failureBranch": "failure/retr-002-duplicate-type-names",
+  "description": "Backend imports SessionConfig from shared, but the same type name also exists in frontend/src/types/session.ts; the correct fix is to export the shared symbol from shared/src/index.ts.",
+  "deterministic": true,
+  "expectedModifiedFiles": ["shared/src/index.ts"]
+}

@@ -1,0 +1,1 @@
+Add a root re-export for `SessionConfig` from `shared/src/types/session.ts` in `shared/src/index.ts`. The duplicate `SessionConfig` in frontend is a distractor and should not be touched.

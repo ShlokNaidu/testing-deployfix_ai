@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import type { HealthResponse } from 'shared'
-import { formatDisplayTimestamp } from 'shared'
 
 function App() {
   const [health, setHealth] = useState<HealthResponse | null>(null)
@@ -21,7 +20,7 @@ function App() {
         {health ? (
           <div>
             <p>Status: {health.status}</p>
-            <p>Time: {formatDisplayTimestamp(new Date(health.lastUpdated))}</p>
+            <p>Time: {health.lastUpdated}</p>
           </div>
         ) : (
           <p>Loading...</p>

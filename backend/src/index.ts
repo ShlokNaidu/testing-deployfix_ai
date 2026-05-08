@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { HealthResponse, User } from 'shared';
+import { HealthResponse, User, SessionConfig } from 'shared';
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (req: Request, res: Response) => {
-  const response: HealthResponse = { status: 'ok', timestamp: new Date().toISOString() };
+  const response: HealthResponse = { status: 'ok', lastUpdated: new Date().toISOString() };
   res.json(response);
 });
 
@@ -21,6 +21,14 @@ app.get('/api/users', (req: Request, res: Response) => {
     { id: '1', name: 'Alice', email: 'alice@example.com' },
   ];
   res.json(users);
+});
+
+app.get('/api/session-config', (req: Request, res: Response) => {
+  const config: SessionConfig = {
+    ttlSeconds: 3600,
+    refreshOnActivity: true,
+  };
+  res.json(config);
 });
 
 app.listen(port, () => {
