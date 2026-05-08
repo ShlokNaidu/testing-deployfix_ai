@@ -1,6 +1,6 @@
 export interface HealthResponse {
   status: string;
-  lastUpdated: string;
+  timestamp: string;
 }
 
 export interface User {
